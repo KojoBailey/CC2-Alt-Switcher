@@ -8,12 +8,16 @@ std::string arrayRange(std::vector<char>& array, int start, int end) {
     return buffer;
 }
 
-std::string stringRange(std::string& text, int start,   int end) {
-    std::string buffer = "";
-    for (int i = start; i < end + 1; i++) {
-        buffer += text.at(i);
+std::string stringRange(std::string& str, int start, int end) {
+    if (start < str.size() && end <= str.size() && start <= end) {
+        return str.substr(start, end - start);
+    } else {
+        return ""; // Return an empty string if indices are out of bounds
     }
-    return buffer;
+}
+
+bool isInt(char c) {
+    return std::isdigit(static_cast<unsigned char>(c)) != 0;
 }
 
 void pause(std::string spaces) {
