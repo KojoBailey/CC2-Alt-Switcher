@@ -87,6 +87,5 @@ void DeployJson(std::fstream& file, json& data, std::string in_directory, std::s
         out_xfbin.close();
     }
     
-    file.clear();
     file << data.dump(2);
 }
